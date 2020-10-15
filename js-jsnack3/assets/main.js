@@ -4,15 +4,17 @@ var userNumbers = [];
 // control var --> if isNaN restart the cicle!
 var userNumberControl;
 var userNumbersSum;
+// number of request
+var request = 5;
 
 // ASK FOR A NUMBER
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < request; i++) {
     // i iteration - insert a number with prompt
     userNumberControl = parseInt(prompt("Inserisci un numero"));
 
     if (isNaN(userNumberControl)) {
         alert("Devi inserire un numero!");
-        i = i - 1;
+        request = request + 1;
     } else {
         userNumbers.push(userNumberControl);
     }
